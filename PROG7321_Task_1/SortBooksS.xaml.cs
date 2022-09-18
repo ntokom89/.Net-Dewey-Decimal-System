@@ -1,4 +1,5 @@
-﻿using PROG7321_Task1.Models;
+﻿using PROG7321_Task_1.Model;
+using PROG7321_Task1.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,23 +22,28 @@ namespace PROG7321_Task_1
     /// </summary>
     public partial class SortBooksS : Window
     {
+        //Declaration of variables
         ListBox dragSource = null;
         List<int > items = new List<int>();
+        List<String> items2 = new List<String>();
+        int pointsbase = 0;
         public SortBooksS()
         {
             InitializeComponent();
         }
 
+        //Method to load data into the first ListBox
         private void loadData(object sender, RoutedEventArgs e)
         {
             DALRandomCallNums.generateCallNumbers();
-            items.AddRange(ListNums.nums);
-            foreach(int nums in items)
+            items2.AddRange(ListNums.callNums);
+            foreach(String nums in items2)
             {
                listBox.Items.Add(nums);
             }
         }
 
+        //A method to implement when a item from a view is clicked on with the left mouse button
         private void ListBox_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             ListBox parent = (ListBox)sender;
@@ -46,12 +52,14 @@ namespace PROG7321_Task_1
 
             if (data != null)
             {
+                //Drag and drop the item into a ListBox put on.
                 DragDrop.DoDragDrop(parent, data, DragDropEffects.Move);
             }
 
         }
 
         #region GetDataFromListBox(ListBox,Point)
+        //Get Data from the ListBox which applies to both ListBox 1 and 2.
         private static object GetDataFromListBox(ListBox source, Point point)
         {
             UIElement? element = source.InputHitTest(point) as UIElement;
@@ -81,40 +89,46 @@ namespace PROG7321_Task_1
 
             return null;
         }
-
+        //A method to retrieve the data from the item that was dropped into the ListBox. Applies to both ListBox 1 and 2
         private void ListBox_Drop(object sender, DragEventArgs e)
         {
             ListBox parent = (ListBox)sender;
-            object data = e.Data.GetData(typeof(int));
+            object data = e.Data.GetData(typeof(string));
+            dragSource.Items.Remove(data);
            //((IList)dragSource.ItemsSource).Remove(data);
             parent.Items.Add(data);
         }
 
         #endregion
 
+        //A button to click to commit the changes being made.
         private void buttonCommit_click(object sender, RoutedEventArgs e)
         {
-            DALRandomCallNums.radixsort(ListNums.nums, ListNums.nums.Count);
+            BubbleSort.Sort(ListNums.callNums);
             if (listBoxResult.Items.Count > 0)
             {
                 ICollection tempList = listBoxResult.Items;
-                List<int> ints = new List<int>();
-                ints.AddRange(listBoxResult.Items.Cast<int>().ToList());
-                bool n = DALRandomCallNums.CompareList(ints);
+                List<String> listCallNums = new List<String>();
+                listCallNums.AddRange(listBoxResult.Items.Cast<String>().ToList());
+                //Boolean to compare the sorted List to list submitted by the user.
+                bool n = DALRandomCallNums.CompareList(listCallNums);
                 if (n == true)
                 {
                     if (progressBar.Value < 100)
                     {
-                        ListNums.nums.Clear();
+                        ListNums.callNums.Clear();
                         listBox.Items.Clear();
                         listBoxResult.Items.Clear();
                         MessageBox.Show("Sucessful match.");
                         DALRandomCallNums.generateCallNumbers();
-                        foreach (int nums in ListNums.nums)
+                        foreach (String nums in ListNums.callNums)
                         {
                             listBox.Items.Add(nums);
                         }
                         progressBar.Value += 10;
+                        pointsbase += 10;
+                        string st = "points : " + pointsbase;
+                        points.Content = st; 
                     }
                     else
                     {
@@ -125,8 +139,22 @@ namespace PROG7321_Task_1
                 {
 
                     MessageBox.Show("Incorrect match, please try again");
+                    ListNums.callNums.Clear();
+                    listBox.Items.Clear();
+                    listBoxResult.Items.Clear();
+               
+                    DALRandomCallNums.generateCallNumbers();
+                    foreach (String nums in ListNums.callNums)
+                    {
+                        listBox.Items.Add(nums);
+                    }
+                    progressBar.Value = 0;
+                    pointsbase = 0;
+                    string st = "points : " + pointsbase;
+                    points.Content = st;
+
                 }
-                //listBoxResult.Items = 
+                
             }
             else
             {
@@ -135,12 +163,19 @@ namespace PROG7321_Task_1
 
         }
 
+        //A button to click back to the menu screen.
         private void backButton_click(object sender, RoutedEventArgs e)
         {
             MainWindow window = new MainWindow();
             window.Show();
             this.Close();
             ListNums.nums.Clear();
+            ListNums.callNums.Clear();
+        }
+
+        private void listBox_isChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+
         }
     }
 }

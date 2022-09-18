@@ -29,6 +29,7 @@ namespace PROG7321_Task_1
         {
             SortBooksS win2 = new SortBooksS();
             win2.Show();
+            this.Close();
         }
     }
 }
