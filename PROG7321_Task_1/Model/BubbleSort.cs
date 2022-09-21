@@ -9,6 +9,7 @@ namespace PROG7321_Task_1.Model
     public  class BubbleSort
     {
         //A method to swap the string List using BubbleSort
+        //https://www.w3resource.com/csharp-exercises/string/csharp-string-exercise-12.php
         public static void Sort(List<string> array)
         {
             for (int i = 0; i < array.Count; i++)
@@ -23,6 +24,7 @@ namespace PROG7321_Task_1.Model
             }
         }
         //Method to swap the elements in the first and second in the array selected.
+        //https://www.w3resource.com/csharp-exercises/string/csharp-string-exercise-12.php
         private static void Swap(List<string> array, int first, int second)
         {
             string temp = array[first];

@@ -24,8 +24,23 @@
             </ListBox.ItemsPanel>
         </ListBox>
         <Button x:Name="buttonCommit" Content="Continue" HorizontalAlignment="Left" Margin="681,376,0,0" VerticalAlignment="Top" Height="33" Width="68" Click="buttonCommit_click"/>
-        
-        <ProgressBar x:Name="progressBar" HorizontalAlignment="Left" Height="17" Margin="139,392,0,0" VerticalAlignment="Top" Width="224" Value="0"/>
+
+
+
+        <ProgressBar 
+                    Name="progressBar"
+                    Margin="40,374,450,0"
+                    Height="20" Width="300"
+                    Value="0" />
+
+        <TextBlock 
+                    Name="progressBarText"
+                    Text="0%" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top" Margin="179,385,0,0"
+            Height="20" RenderTransformOrigin="0.626,-0.693"/>
+
+
         <Button x:Name="backButton" Content="Back" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Click="backButton_click"/>
         <Label Content="Random Call numbers" HorizontalAlignment="Left" Margin="158,44,0,0" VerticalAlignment="Top"/>
         <Label Content="Input Call Numbers" HorizontalAlignment="Left" Margin="549,44,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.652,-0.242"/>

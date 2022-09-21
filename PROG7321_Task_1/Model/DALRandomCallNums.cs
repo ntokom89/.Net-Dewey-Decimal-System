@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 namespace PROG7321_Task1.Model
@@ -11,14 +12,20 @@ namespace PROG7321_Task1.Model
          */
 
 
-
+        //Method to randomly generate Call Numbers
+        //https://mkyong.com/java/java-generate-random-integers-in-a-range/
+        //https://learn.microsoft.com/en-us/dotnet/api/system.math.round?view=net-7.0
         public static void generateCallNumbers()
         {
             String words = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             Random random = new Random();
-            for(int i = 0; i < 10; i++)
+            //https://stackoverflow.com/questions/23156197/format-a-number-with-dots-and-decimals-in-c-sharp Me.Name
+            var nfi = new NumberFormatInfo { NumberGroupSeparator = "." };
+            for (int i = 0; i < 10; i++)
             {
-                double nums = Math.Round((double)random.NextDouble()*999,2);
+                double nums = (double)Math.Round(random.NextDouble()*999,2);
+                Console.WriteLine(nums);
+                //double digit = random.Next(99);
                 var check = (from x in ListNums.nums
                              where x.Equals(nums)
                              select x).ToList();
@@ -40,7 +47,8 @@ namespace PROG7321_Task1.Model
                 var finalString = new String(stringChars);
                 //https://stackoverflow.com/questions/164926/how-do-i-display-a-decimal-value-to-2-decimal-places
                 //Convert nums to String
-                ListNums.callNums.Add(nums.ToString("#.##") + finalString); 
+                String number = nums.ToString("0##.00", nfi);
+                ListNums.callNums.Add(number + finalString); 
                 //ListNums.nums[i] = random.Next(1000);
             }
 
@@ -53,17 +61,18 @@ namespace PROG7321_Task1.Model
 
            
         }
-        public static Boolean CompareList(List<String> array1)
+        //Method to compare the user submitted list to sorted list
+        public static Boolean CompareList(List<String> listCallNumsUser)
         {
             Boolean result = true;
             for(int i = 0; i< ListNums.callNums.Count; i++)
             {
                
-                Console.WriteLine("Array 1: " +array1[i]);
-                if(array1[i] != ListNums.callNums[i])
+                Console.WriteLine("Array 1: " +listCallNumsUser[i]);
+                if(listCallNumsUser[i] != ListNums.callNums[i])
                 {
                     result = false;
-                    Console.Write(array1[i]);
+                    Console.Write(listCallNumsUser[i]);
                 }
             }
             Console.WriteLine(result);

@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace PROG7321_Task_1
 {
@@ -27,6 +28,7 @@ namespace PROG7321_Task_1
         List<int > items = new List<int>();
         List<String> items2 = new List<String>();
         int pointsbase = 0;
+        DispatcherTimer dispatcherTimer = new DispatcherTimer();
         public SortBooksS()
         {
             InitializeComponent();
@@ -44,6 +46,7 @@ namespace PROG7321_Task_1
         }
 
         //A method to implement when a item from a view is clicked on with the left mouse button
+        //https://www.c-sharpcorner.com/uploadfile/dpatra/drag-and-drop-item-in-listbox-in-wpf/ Diptimaya Patra
         private void ListBox_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             ListBox parent = (ListBox)sender;
@@ -60,6 +63,8 @@ namespace PROG7321_Task_1
 
         #region GetDataFromListBox(ListBox,Point)
         //Get Data from the ListBox which applies to both ListBox 1 and 2.
+        //https://www.youtube.com/watch?v=U9P2Bg7u5uA SingletonSean
+        //https://www.c-sharpcorner.com/uploadfile/dpatra/drag-and-drop-item-in-listbox-in-wpf/ Diptimaya Patra
         private static object GetDataFromListBox(ListBox source, Point point)
         {
             UIElement? element = source.InputHitTest(point) as UIElement;
@@ -90,6 +95,7 @@ namespace PROG7321_Task_1
             return null;
         }
         //A method to retrieve the data from the item that was dropped into the ListBox. Applies to both ListBox 1 and 2
+        //https://www.c-sharpcorner.com/uploadfile/dpatra/drag-and-drop-item-in-listbox-in-wpf/ Diptimaya Patra
         private void ListBox_Drop(object sender, DragEventArgs e)
         {
             ListBox parent = (ListBox)sender;
@@ -105,7 +111,7 @@ namespace PROG7321_Task_1
         private void buttonCommit_click(object sender, RoutedEventArgs e)
         {
             BubbleSort.Sort(ListNums.callNums);
-            if (listBoxResult.Items.Count > 0)
+            if (listBoxResult.Items.Count == 10)
             {
                 ICollection tempList = listBoxResult.Items;
                 List<String> listCallNums = new List<String>();
@@ -121,14 +127,27 @@ namespace PROG7321_Task_1
                         listBoxResult.Items.Clear();
                         MessageBox.Show("Sucessful match.");
                         DALRandomCallNums.generateCallNumbers();
-                        foreach (String nums in ListNums.callNums)
-                        {
-                            listBox.Items.Add(nums);
-                        }
                         progressBar.Value += 10;
-                        pointsbase += 10;
+                        progressBarText.Text = progressBar.Value + "%";
+                        pointsbase += 20;
                         string st = "points : " + pointsbase;
-                        points.Content = st; 
+                        points.Content = st;
+                        if(progressBar.Value == 100)
+                        {
+                            MessageBox.Show("Game complete");
+                            MessageBox.Show("Points : " + pointsbase);
+                            MainWindow window = new MainWindow();
+                            window.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            foreach (String nums in ListNums.callNums)
+                            {
+                                listBox.Items.Add(nums);
+                            }
+                        }
+
                     }
                     else
                     {
@@ -139,26 +158,44 @@ namespace PROG7321_Task_1
                 {
 
                     MessageBox.Show("Incorrect match, please try again");
+                    String listCorrectOrder ="";
+                    foreach(String nums in ListNums.callNums)
+                    {
+                        listCorrectOrder += nums + "\n";
+                    }
+                    MessageBox.Show("Correct Order" + "\n" +listCorrectOrder);
                     ListNums.callNums.Clear();
                     listBox.Items.Clear();
                     listBoxResult.Items.Clear();
-               
-                    DALRandomCallNums.generateCallNumbers();
-                    foreach (String nums in ListNums.callNums)
-                    {
-                        listBox.Items.Add(nums);
-                    }
-                    progressBar.Value = 0;
-                    pointsbase = 0;
+                    progressBar.Value -= 10;
+                    pointsbase -= 5;
                     string st = "points : " + pointsbase;
                     points.Content = st;
+
+                    if(progressBar.Value < 0 || pointsbase < 0)
+                    {
+                        MessageBox.Show("Game over");
+                        MessageBox.Show("Points : " + pointsbase);
+                        MainWindow window = new MainWindow();
+                        window.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        DALRandomCallNums.generateCallNumbers();
+                        foreach (String nums in ListNums.callNums)
+                        {
+                            listBox.Items.Add(nums);
+                        }
+                    }
+
 
                 }
                 
             }
             else
             {
-                MessageBox.Show("Please fill in the listbox");
+                MessageBox.Show("Please fully fill in the listbox");
             }
 
         }
