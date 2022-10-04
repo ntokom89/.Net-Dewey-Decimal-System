@@ -12,8 +12,11 @@
             <RowDefinition Height="305*"/>
         </Grid.RowDefinitions>
         <Label Content="SORTBOOKS" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" Height="47" Width="264" FontFamily="Arial Black" FontStyle="Normal" FontSize="36"/>
-        <Button x:Name="buttonSortBooks" Content="Replacing Books( Sort Books)
-                " HorizontalAlignment="Left" Margin="75,50,0,0" Grid.Row="1" VerticalAlignment="Top" Height="150" Width="163" Click="sortBooks_btn"/>
+        <Button x:Name="buttonSortBooks" Content="Reorder Books" HorizontalAlignment="Left" Margin="65,50,0,0" Grid.Row="1" VerticalAlignment="Top" Height="150" Width="163" Click="sortBooks_btn" Foreground="White">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/sorting-books2.jpg"/>
+            </Button.Background>
+        </Button>
         <Button x:Name="buttonSortBooks_Copy" Content="Find Call Number" HorizontalAlignment="Left" Margin="336,50,0,0" Grid.Row="1" VerticalAlignment="Top" Height="150" Width="163" Click="sortBooks_btn"/>
         <Button x:Name="buttonIdentifyAreas" Content="Identify Areas" HorizontalAlignment="Left" Margin="595,50,0,0" Grid.Row="1" VerticalAlignment="Top" Height="150" Width="163" Click="IdentifyAreas_btn"/>
 

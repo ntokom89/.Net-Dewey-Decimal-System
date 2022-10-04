@@ -22,6 +22,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="472,275,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="35" Width="245" Background="#FF75FFAA" TextAlignment="Center" LineHeight="7" FontSize="18"/>
         <TextBlock HorizontalAlignment="Left" Margin="472,335,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="35" Width="245" Background="#FF75FFAA" TextAlignment="Center" LineHeight="7" FontSize="18"/>
         <TextBlock HorizontalAlignment="Left" Margin="472,389,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="35" Width="245" Background="#FF75FFAA" TextAlignment="Center" LineHeight="7" FontSize="18"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="60,389,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

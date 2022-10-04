@@ -8,7 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\sorting-books2.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Syncfusion.SfProgressBar.WPF" Version="20.2.0.49" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\sorting-books2.jpg" />
   </ItemGroup>
 
 </Project>
