@@ -31,5 +31,12 @@ namespace PROG7321_Task_1
             win2.Show();
             this.Close();
         }
+
+        private void IdentifyAreas_btn(object sender, RoutedEventArgs e)
+        {
+            Identifying_Areas win2 = new Identifying_Areas();
+            win2.Show();
+            this.Close();
+        }
     }
 }

@@ -74,7 +74,7 @@ namespace PROG7321_Task1.Model
                     result = false;
                     Console.Write(listCallNumsUser[i]);
                 }
-            }
+            }  
             Console.WriteLine(result);
             return result;
         }

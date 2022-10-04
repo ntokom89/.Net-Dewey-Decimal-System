@@ -15,7 +15,7 @@
         <Button x:Name="buttonSortBooks" Content="Replacing Books( Sort Books)
                 " HorizontalAlignment="Left" Margin="75,50,0,0" Grid.Row="1" VerticalAlignment="Top" Height="150" Width="163" Click="sortBooks_btn"/>
         <Button x:Name="buttonSortBooks_Copy" Content="Find Call Number" HorizontalAlignment="Left" Margin="336,50,0,0" Grid.Row="1" VerticalAlignment="Top" Height="150" Width="163" Click="sortBooks_btn"/>
-        <Button x:Name="buttonSortBooks_Copy1" Content="Identify Areas" HorizontalAlignment="Left" Margin="595,50,0,0" Grid.Row="1" VerticalAlignment="Top" Height="150" Width="163" Click="sortBooks_btn"/>
+        <Button x:Name="buttonIdentifyAreas" Content="Identify Areas" HorizontalAlignment="Left" Margin="595,50,0,0" Grid.Row="1" VerticalAlignment="Top" Height="150" Width="163" Click="IdentifyAreas_btn"/>
 
     </Grid>
 </Window>
