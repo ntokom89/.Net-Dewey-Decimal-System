@@ -7,22 +7,24 @@
         mc:Ignorable="d"
         Title="Identifying_Areas" Height="450" Width="800">
     <Grid Background="#FFE97575">
-        <TextBlock x:Name="TextBlockCallNum" HorizontalAlignment="Left" Margin="60,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="120" Background="#FF8E94F9" TextAlignment="Center"><Run Text="CallNum "/><Run Language="en-za" Text="1"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Margin="203,87,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="62" Height="17"/>
+        <Button x:Name="TextBlockCallNum" HorizontalAlignment="Left" Margin="60,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="120" Background="#FF8E94F9" TextAlignment="Center" Content="CallNum 1"></Button>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="203,87,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="62" Height="17"/>
         <TextBlock x:Name="TextBlockCallNum2" HorizontalAlignment="Left" Margin="60,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="120" Background="#FF8E94F9" TextAlignment="Center"><Run Text="CallNum "/><Run Language="en-za" Text="1"/></TextBlock>
         <TextBlock x:Name="TextBlockCallNum3" HorizontalAlignment="Left" Margin="60,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Height="32" Width="120" Background="#FF8E94F9" TextAlignment="Center"><Run Text="CallNum "/><Run Language="en-za" Text="1"/></TextBlock>
         <TextBlock x:Name="TextBlockCallNum4" HorizontalAlignment="Left" Margin="60,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="120" Background="#FF8E94F9" TextAlignment="Center"><Run Text="CallNum "/><Run Language="en-za" Text="1"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Margin="203,135,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="62" Height="17"/>
-        <TextBox HorizontalAlignment="Left" Margin="203,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="62" Height="17"/>
-        <TextBox HorizontalAlignment="Left" Margin="203,270,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="62" Height="16"/>
-        <TextBlock HorizontalAlignment="Left" Margin="472,39,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="35" Width="245" Background="#FF75FFAA" TextAlignment="Center" LineHeight="7" FontSize="18"/>
-        <TextBlock HorizontalAlignment="Left" Margin="472,99,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="35" Width="245" Background="#FF75FFAA" TextAlignment="Center" LineHeight="7" FontSize="18"/>
-        <TextBlock HorizontalAlignment="Left" Margin="472,164,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="35" Width="245" Background="#FF75FFAA" TextAlignment="Center" LineHeight="7" FontSize="18"/>
-        <TextBlock HorizontalAlignment="Left" Margin="472,217,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="35" Width="245" Background="#FF75FFAA" TextAlignment="Center" LineHeight="7" FontSize="18"/>
-        <TextBlock HorizontalAlignment="Left" Margin="472,275,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="35" Width="245" Background="#FF75FFAA" TextAlignment="Center" LineHeight="7" FontSize="18"/>
-        <TextBlock HorizontalAlignment="Left" Margin="472,335,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="35" Width="245" Background="#FF75FFAA" TextAlignment="Center" LineHeight="7" FontSize="18"/>
-        <TextBlock HorizontalAlignment="Left" Margin="472,389,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="35" Width="245" Background="#FF75FFAA" TextAlignment="Center" LineHeight="7" FontSize="18"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="60,389,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Margin="203,135,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="62" Height="17"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Margin="203,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="62" Height="17"/>
+        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Margin="203,270,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="62" Height="16"/>
+        <TextBlock x:Name="textBoxDescription1" HorizontalAlignment="Left" Margin="474,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="26" Width="245" Background="#FF75FFAA" TextAlignment="Center" LineHeight="7" FontWeight="Bold"/>
+        <TextBlock x:Name="textBoxDescription2" HorizontalAlignment="Left" Margin="474,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="26" Width="245" Background="#FF75FFAA" TextAlignment="Center" LineHeight="7" FontWeight="Bold"/>
+        <TextBlock x:Name="textBoxDescription3" HorizontalAlignment="Left" Margin="474,125,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="26" Width="245" Background="#FF75FFAA" TextAlignment="Center" LineHeight="7" FontWeight="Bold"/>
+        <TextBlock x:Name="textBoxDescription4" HorizontalAlignment="Left" Margin="474,184,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="26" Width="245" Background="#FF75FFAA" TextAlignment="Center" LineHeight="7" FontWeight="Bold"/>
+        <TextBlock x:Name="textBoxDescription5" HorizontalAlignment="Left" Margin="474,231,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="26" Width="245" Background="#FF75FFAA" TextAlignment="Center" LineHeight="7" FontWeight="Bold"/>
+        <TextBlock x:Name="textBoxDescription6" HorizontalAlignment="Left" Margin="474,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="26" Width="245" Background="#FF75FFAA" TextAlignment="Center" LineHeight="7" FontWeight="Bold"/>
+        <TextBlock x:Name="textBoxDescription7" HorizontalAlignment="Left" Margin="474,342,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="26" Width="245" Background="#FF75FFAA" TextAlignment="Center" LineHeight="7" FontWeight="Bold"/>
+        <Button x:Name="buttonContinue" Content="Continue" HorizontalAlignment="Left" Margin="60,370,0,0" VerticalAlignment="Top" Height="39" Width="60" Click="onClickButtonContinue"/>
+        <Button x:Name="buttonBack" Content="Back" HorizontalAlignment="Left" Margin="50,20,0,0" VerticalAlignment="Top" Width="40" Click="onButtonBackClick"/>
+        <Label x:Name="pointsLb" Content="Score : 0" HorizontalAlignment="Left" Margin="327,40,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
