@@ -7,24 +7,23 @@
         mc:Ignorable="d"
         Title="Identifying_Areas" Height="450" Width="800">
     <Grid Background="#FFE97575">
-        <Button x:Name="TextBlockCallNum" HorizontalAlignment="Left" Margin="60,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="120" Background="#FF8E94F9" TextAlignment="Center" Content="CallNum 1"></Button>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="203,87,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="62" Height="17"/>
-        <TextBlock x:Name="TextBlockCallNum2" HorizontalAlignment="Left" Margin="60,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="120" Background="#FF8E94F9" TextAlignment="Center"><Run Text="CallNum "/><Run Language="en-za" Text="1"/></TextBlock>
-        <TextBlock x:Name="TextBlockCallNum3" HorizontalAlignment="Left" Margin="60,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Height="32" Width="120" Background="#FF8E94F9" TextAlignment="Center"><Run Text="CallNum "/><Run Language="en-za" Text="1"/></TextBlock>
-        <TextBlock x:Name="TextBlockCallNum4" HorizontalAlignment="Left" Margin="60,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="120" Background="#FF8E94F9" TextAlignment="Center"><Run Text="CallNum "/><Run Language="en-za" Text="1"/></TextBlock>
-        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Margin="203,135,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="62" Height="17"/>
-        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Margin="203,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="62" Height="17"/>
-        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Margin="203,270,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="62" Height="16"/>
-        <TextBlock x:Name="textBoxDescription1" HorizontalAlignment="Left" Margin="474,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="26" Width="245" Background="#FF75FFAA" TextAlignment="Center" LineHeight="7" FontWeight="Bold"/>
-        <TextBlock x:Name="textBoxDescription2" HorizontalAlignment="Left" Margin="474,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="26" Width="245" Background="#FF75FFAA" TextAlignment="Center" LineHeight="7" FontWeight="Bold"/>
-        <TextBlock x:Name="textBoxDescription3" HorizontalAlignment="Left" Margin="474,125,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="26" Width="245" Background="#FF75FFAA" TextAlignment="Center" LineHeight="7" FontWeight="Bold"/>
-        <TextBlock x:Name="textBoxDescription4" HorizontalAlignment="Left" Margin="474,184,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="26" Width="245" Background="#FF75FFAA" TextAlignment="Center" LineHeight="7" FontWeight="Bold"/>
-        <TextBlock x:Name="textBoxDescription5" HorizontalAlignment="Left" Margin="474,231,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="26" Width="245" Background="#FF75FFAA" TextAlignment="Center" LineHeight="7" FontWeight="Bold"/>
-        <TextBlock x:Name="textBoxDescription6" HorizontalAlignment="Left" Margin="474,290,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="26" Width="245" Background="#FF75FFAA" TextAlignment="Center" LineHeight="7" FontWeight="Bold"/>
-        <TextBlock x:Name="textBoxDescription7" HorizontalAlignment="Left" Margin="474,342,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="26" Width="245" Background="#FF75FFAA" TextAlignment="Center" LineHeight="7" FontWeight="Bold"/>
-        <Button x:Name="buttonContinue" Content="Continue" HorizontalAlignment="Left" Margin="60,370,0,0" VerticalAlignment="Top" Height="39" Width="60" Click="onClickButtonContinue"/>
-        <Button x:Name="buttonBack" Content="Back" HorizontalAlignment="Left" Margin="50,20,0,0" VerticalAlignment="Top" Width="40" Click="onButtonBackClick"/>
-        <Label x:Name="pointsLb" Content="Score : 0" HorizontalAlignment="Left" Margin="327,40,0,0" VerticalAlignment="Top"/>
-
+        <Canvas x:Name ="myCanvas">
+            <Button x:Name="ButtonQuestion1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="32" Width="188" Background="#FF8E94F9"  Content="CallNum 1" Canvas.Left="29" Canvas.Top="88" Click="onBlockQstBtn"/>
+            <Button x:Name="ButtonQuestion2" HorizontalAlignment="Left"  VerticalAlignment="Center" Height="32" Width="188" Background="#FF8E94F9"  Canvas.Left="29" Canvas.Top="154" Content="Question2" Click="onQuestion2Btn"></Button>
+            <Button x:Name="ButtonQuestion3" HorizontalAlignment="Left" VerticalAlignment="Center" Height="32" Width="188" Background="#FF8E94F9" Canvas.Left="29" Canvas.Top="209" Content="Question3" Click="onQuestion3Btn"></Button>
+            <Button x:Name="ButtonQuestion4" HorizontalAlignment="Left" Content="Question4" VerticalAlignment="Center" Height="32" Width="188" Background="#FF8E94F9" Click="onQuestion4Btn" Canvas.Left="29" Canvas.Top="262" />
+            <Button x:Name="buttonAnswer1" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="26" Width="289" Background="#FF75FFAA"  FontWeight="Bold" Click="onAnswer1Btn" Canvas.Left="430" Canvas.Top="22"/>
+            <Button x:Name="buttonAnswer2" HorizontalAlignment="Left" Content="" VerticalAlignment="Top" Height="26" Width="289" Background="#FF75FFAA" FontWeight="Bold" Click="onAnswer2Btn" Canvas.Left="430" Canvas.Top="73"/>
+            <Button x:Name="buttonAnswer3" HorizontalAlignment="Left" Content="" VerticalAlignment="Top" Height="26" Width="289" Background="#FF75FFAA"  FontWeight="Bold" Click="onAnswer3Btn" Canvas.Left="430" Canvas.Top="125"/>
+            <Button x:Name="buttonAnswer4" HorizontalAlignment="Left" Content="" VerticalAlignment="Top" Height="26" Width="289" Background="#FF75FFAA"  FontWeight="Bold" Click="onAnswer4Btn" Canvas.Left="430" Canvas.Top="184"/>
+            <Button x:Name="buttonAnswer5" HorizontalAlignment="Left" Content="" VerticalAlignment="Top" Height="26" Width="289" Background="#FF75FFAA"  FontWeight="Bold" Click="onAnswer5btn" Canvas.Left="430" Canvas.Top="231"/>
+            <Button x:Name="buttonAnswer6" HorizontalAlignment="Left" Content="" VerticalAlignment="Top" Height="26" Width="289" Background="#FF75FFAA"  FontWeight="Bold" Click="onAnswer6Btn" Canvas.Left="430" Canvas.Top="290"/>
+            <Button x:Name="buttonAnswer7" HorizontalAlignment="Left" Content="" VerticalAlignment="Top" Height="26" Width="289" Background="#FF75FFAA"  FontWeight="Bold" Click="onAnswer7Btn" Canvas.Left="430" Canvas.Top="342"/>
+            <Button x:Name="buttonContinue" Content="Continue" HorizontalAlignment="Left" VerticalAlignment="Top" Height="39" Width="91" Click="onClickButtonContinue" Canvas.Left="29" Canvas.Top="370"/>
+            <Button x:Name="buttonBack" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="61" Click="onButtonBackClick" Height="23" Canvas.Left="29" Canvas.Top="20"/>
+            <Label x:Name="pointsLb" Content="Score : 0" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="162" Canvas.Top="22"/>
+            <ProgressBar x:Name="progressBar" Height="24" Canvas.Left="161" Canvas.Top="370" Width="149" Value="0"/>
+            <Button x:Name="switchQuestionBtn" Content="Switch Question Type" Canvas.Left="261" Canvas.Top="25" Background="#FFD713C4" Click="switchQuestionBtn_click"/>
+        </Canvas>
     </Grid>
 </Window>

@@ -1,0 +1,33 @@
+﻿<Window x:Class="PROG7321_Task_2.IdentifyCallNums"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PROG7321_Task_2"
+        mc:Ignorable="d"
+        Title="IdentifyCallNums" Height="450" Width="800">
+    <Grid Background="#FFE58585">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="156*"/>
+            <RowDefinition Height="61*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="textBlockThirdLevDes" HorizontalAlignment="Center" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Center" Height="44" Width="226" Grid.Row="1"/>
+        <Button x:Name="topLeveltbn1" Content="" HorizontalAlignment="Left" Margin="79,252,0,0" VerticalAlignment="Top" Height="59" Width="115" Click="topLeveltbn1_click"/>
+        <Button x:Name="topLeveltbn2" Content="" HorizontalAlignment="Left" Margin="253,252,0,0" VerticalAlignment="Top" Height="59" Width="117" Click="topLeveltbn2_click"/>
+        <Button x:Name="topLeveltbn3" Content="" HorizontalAlignment="Left" Margin="417,252,0,0" VerticalAlignment="Top" Height="59" Width="127" Click="topLeveltbn3_click"/>
+        <Button x:Name="secondLevelbtn1" Content="" HorizontalAlignment="Left" Margin="79,178,0,0" VerticalAlignment="Top" Height="46" Width="115" Visibility="Hidden" Click="secondLevelbtn1_click"/>
+        <Button x:Name="secondLevelbtn2" Content="" HorizontalAlignment="Left" Margin="256,178,0,0" VerticalAlignment="Top" Height="45" Width="114" Visibility="Hidden" Click="secondLevelbtn2_click"/>
+        <Button x:Name="secondLevelbtn3" Content="" HorizontalAlignment="Left" Margin="417,178,0,0" VerticalAlignment="Top" Height="45" Width="127" Visibility="Hidden" Click="secondLevelbtn3_click"/>
+        <Label x:Name="scoreLbl" Content="Label" HorizontalAlignment="Left" Margin="592,21,0,0" VerticalAlignment="Top" Height="38" Width="148"/>
+        <Button x:Name="thirdLevelbtn1" Content="" HorizontalAlignment="Left" Margin="79,112,0,0" VerticalAlignment="Top" Height="44" Width="115" Click="thirdLevelbtn1_click" Visibility="Hidden"/>
+        <Button x:Name="thirdLevelbtn2" Content="" HorizontalAlignment="Left" Margin="256,112,0,0" VerticalAlignment="Top" Height="44" Width="114" Click="thirdLevelbtn2_click" Visibility="Hidden"/>
+        <Button x:Name="thirdLevelbtn3" Content="" HorizontalAlignment="Left" Margin="417,112,0,0" VerticalAlignment="Top" Width="127" Height="44" Click="thirdLevelbtn3_click" Visibility="Hidden"/>
+        <Button x:Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="79,27,0,0" VerticalAlignment="Top" Height="32" Width="60" Click="backBtnClick"/>
+        <Label x:Name="answerLbl" Content="Label" HorizontalAlignment="Left" Margin="220,29,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.377,0.48" Height="28" Width="275"/>
+        <Button x:Name="topLeveltbn4" Content="" HorizontalAlignment="Left" Margin="592,252,0,0" VerticalAlignment="Top" Height="60" Width="126" Click="topLeveltbn4_click"/>
+        <Button x:Name="secondLevelbtn4" Content="" HorizontalAlignment="Left" Margin="592,178,0,0" VerticalAlignment="Top" Height="45" Width="126" Click="secondLevelbtn4_click" Visibility="Hidden"/>
+        <Button x:Name="thirdLevelbtn4" Content="" HorizontalAlignment="Left" Margin="592,112,0,0" VerticalAlignment="Top" Height="44" Width="126" Click="thirdLevelbtn4_click" Visibility="Hidden"/>
+        <ProgressBar x:Name="progressBar" HorizontalAlignment="Left" Height="22" Margin="32,61,0,0" Grid.Row="1" VerticalAlignment="Top" Width="162" RenderTransformOrigin="0.487,0.557"/>
+
+    </Grid>
+</Window>

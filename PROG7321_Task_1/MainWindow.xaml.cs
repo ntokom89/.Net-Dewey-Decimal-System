@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PROG7321_Task_2;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,6 +36,13 @@ namespace PROG7321_Task_1
         private void IdentifyAreas_btn(object sender, RoutedEventArgs e)
         {
             Identifying_Areas win2 = new Identifying_Areas();
+            win2.Show();
+            this.Close();
+        }
+
+        private void findCallNum_btn(object sender, RoutedEventArgs e)
+        {
+            IdentifyCallNums win2 = new IdentifyCallNums();
             win2.Show();
             this.Close();
         }

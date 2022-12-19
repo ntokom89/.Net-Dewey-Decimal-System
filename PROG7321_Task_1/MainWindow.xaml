@@ -17,8 +17,16 @@
                 <ImageBrush ImageSource="/Images/sorting-books2.jpg"/>
             </Button.Background>
         </Button>
-        <Button x:Name="buttonSortBooks_Copy" Content="Find Call Number" HorizontalAlignment="Left" Margin="336,50,0,0" Grid.Row="1" VerticalAlignment="Top" Height="150" Width="163" Click="sortBooks_btn"/>
-        <Button x:Name="buttonIdentifyAreas" Content="Identify Areas" HorizontalAlignment="Left" Margin="595,50,0,0" Grid.Row="1" VerticalAlignment="Top" Height="150" Width="163" Click="IdentifyAreas_btn"/>
+        <Button x:Name="buttonFindCallNumber" Content="Find Call Number" HorizontalAlignment="Left" Margin="336,50,0,0" Grid.Row="1" VerticalAlignment="Top" Height="150" Width="163" Click="findCallNum_btn" Foreground="White">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/shelf image FINAL.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="buttonIdentifyAreas" Content="Identify Areas" HorizontalAlignment="Left" Margin="595,50,0,0" Grid.Row="1" VerticalAlignment="Top" Height="150" Width="163" Click="IdentifyAreas_btn" Foreground="#FF020000">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/Identify Areas.png"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

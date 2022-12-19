@@ -47,8 +47,8 @@ namespace PROG7321_Task1.Model
                 var finalString = new String(stringChars);
                 //https://stackoverflow.com/questions/164926/how-do-i-display-a-decimal-value-to-2-decimal-places
                 //Convert nums to String
-                String number = nums.ToString("0##.00", nfi);
-                ListNums.callNums.Add(number + finalString); 
+                String CallNumber = nums.ToString("0##.00", nfi) + finalString;
+                ListNums.callNums.Add(CallNumber); 
                 //ListNums.nums[i] = random.Next(1000);
             }
 
