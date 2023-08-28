@@ -1,8 +1,8 @@
-# PROG7321_Task_1
+# .Net Dewey Decimal System
 
 ## Introduction
 
-This readme file will explain the functions of the application for Part 1 of PROG 7321. The file will show how to interact with the application,
+This readme file will explain the functions of the application for Dewey Decimal System. The file will show how to interact with the application,
 how the program works and the results. Components behind the application will also be explained on howit influences the functionality
 of the program.
 
