@@ -22,7 +22,7 @@ The item dropped will appear last but can be rearranged in the listbox (Diptimay
 When the User clicks on the submit button, the listbox list of items from the second listbox will be checked. A sort of 
 the list is done using bubble sort although work is being done to convert radix sort to work for strings (w3resource, 2022).
 
-##After submit button in application
+## After submit button in application
 
 When the sort is done, the sorted list will be compared to the list submitted by the user. If there is a match, the user will be notified of 
 successful match. The progress bar will increase by ten percent and there will be a 30 point increase. User can then proceed to the next 
